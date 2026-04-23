@@ -8,6 +8,9 @@ class Nodo:
     def agregar_conexion(self, nodo):#Define un método llamado agregar_conexion,self(nodo actual),nodo (querés agregar como conexión)
         self.conexiones.append(nodo)#es una lista donde guardás los nodos conectados,append(agrega un elemento al final de la lista)
 
+    def eliminar_conexion(self, nodo):
+        self.conexiones.remove(nodo)
+        
     def enviar_mensaje(self, mensaje):
         print(f"\n{self.nombre} envía: {mensaje}")
         for nodo in self.conexiones:
@@ -15,7 +18,6 @@ class Nodo:
 
     def recibir_mensaje(self, mensaje, emisor):
         print(f"{self.nombre} recibió de {emisor}: {mensaje}")
-
 
 
 servidor = Nodo("servidor")
